@@ -6,7 +6,12 @@
     <div class="container">
     <div class="alert alert-info">
 	<a class="close" data-dismiss="alert">×</a>
+		{% ifequal recaptcha_error 0 %}
+		验证成功！
+		{% else %}
 		Hello,<strong>{{user_name}}</strong>
+		{{recaptcha_error}}
+		{% endifequal %}
     </div>
 		 <form action="" method="post">
 		 <div>{{captchahtml}}</div>
