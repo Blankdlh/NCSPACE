@@ -13,10 +13,12 @@
 		{{recaptcha_error}}
 		{% endifequal %}
     </div>
+		{% ifnotequal recaptcha_error 0 %}
 		 <form action="" method="post">
 		 <div>{{captchahtml}}</div>
 		 <button type="submit" class="btn btn-small btn-inverse">提交</button>
 		 </form>
+		 {% endifnotequal %}
       {% include 'common/footer.html' %}	
     </div> <!-- /container -->
 
